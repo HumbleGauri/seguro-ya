@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Seguro Ya — Buscar usuario</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="usuario.css?v=20261009-logo2">
+  <link rel="stylesheet" href="admin.css?v=20261011-admin2">
+  <script src="panel-sesion.js" defer></script>
+  <script src="admin-panel.js?v=20261011-admin2" defer></script>
+</head>
+<body data-profile="admin">
+  <header class="portal-header">
+    <a class="brand portal-brand" href="admin.html" aria-label="Seguro Ya, inicio de administración">
+      <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="180" height="60">
+    </a>
+    <div class="portal-header__account">
+      <span class="account-email" id="user-email"></span>
+      <button class="logout-button" id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+  <main class="portal-main">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">Área de administración</p>
+      <h1 id="welcome-title">Buscar usuario</h1>
+      <p>Encontrá cuentas por correo electrónico.</p>
+      <a class="back-link" href="admin.html">← Volver al panel administrador</a>
+    </section>
+    <p class="form-message" id="session-message" role="alert" aria-live="polite"></p>
+    <section class="admin-panel" id="buscar-usuario" aria-labelledby="search-user-title">
+      <div class="admin-panel__heading">
+        <div>
+          <p class="eyebrow">Cuentas</p>
+          <h2 id="search-user-title">Búsqueda por correo</h2>
+          <p>Ingresá un correo o una parte para buscar coincidencias.</p>
+        </div>
+      </div>
+      <form class="admin-search" id="user-search-form">
+        <div class="admin-search__field">
+          <label for="search-email">Correo electrónico</label>
+          <input id="search-email" name="email" type="search" autocomplete="off" required>
+        </div>
+        <button class="admin-button" type="submit">Buscar</button>
+      </form>
+      <p class="admin-status" id="user-search-status" role="status" aria-live="polite">Los resultados aparecerán acá.</p>
+      <div class="admin-table-wrap" id="user-search-results" tabindex="0" aria-label="Usuarios encontrados; desplazá la tabla horizontalmente para ver todas las columnas" hidden>
+        <table class="admin-table">
+          <thead><tr><th scope="col">ID</th><th scope="col">Correo</th><th scope="col">Perfil</th><th scope="col">Nacimiento</th><th scope="col">Registro</th></tr></thead>
+          <tbody id="user-search-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="portal-footer"><span>Seguro Ya</span><span>Área de administración</span></footer>
+</body>
+</html>

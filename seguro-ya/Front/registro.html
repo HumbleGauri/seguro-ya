@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguro Ya — Crear cuenta</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="registro.css?v=20261010-cobertura">
+  <script src="registro.js?v=20261010-cobertura" defer></script>
+</head>
+<body>
+  <main class="login-page">
+    <section class="brand-panel" aria-label="Presentación de Seguro Ya">
+      <div class="brand-panel__content">
+        <a class="brand" href="#" aria-label="Seguro Ya, inicio">
+          <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="216" height="72">
+        </a>
+
+        <div class="brand-panel__copy">
+          <p class="eyebrow">Tu protección, siempre cerca</p>
+          <h1>Conducí tranquilo.<br><em>Estamos con vos.</em></h1>
+          <p class="brand-panel__description">
+            Gestioná tu póliza, consultá tu cobertura y pedí asistencia cuando la necesites.
+          </p>
+        </div>
+      </div>
+      <span class="brand-panel__shape brand-panel__shape--one" aria-hidden="true"></span>
+      <span class="brand-panel__shape brand-panel__shape--two" aria-hidden="true"></span>
+    </section>
+    
+    <section class="form-panel" aria-label="Formulario de registro">
+      <div class="login-card login-card--form" id="user-step">
+        <a class="mobile-brand brand" href="prototipo-login.html" aria-label="Seguro Ya, inicio">
+          <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="216" height="72">
+        </a>
+        <div class="login-card__heading">
+          <p class="eyebrow">Nueva cuenta</p>
+          <h2>Creá tu cuenta</h2>
+          <p>Completá tus datos para registrarte en Seguro Ya.</p>
+        </div>
+
+        <form class="login-form" id="register-form">
+          <div class="field">
+            <label for="first-name">Nombres</label>
+            <input id="first-name" name="nombres" type="text" autocomplete="given-name" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Apellidos</label>
+            <input id="last-name" name="apellidos" type="text" autocomplete="family-name" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="register-username">Nombre de usuario</label>
+            <input id="register-username" name="nombre_usuario" type="text" autocomplete="username" minlength="3" maxlength="50" pattern="[A-Za-z0-9_.]{3,50}" aria-describedby="username-hint" required>
+            <p class="field-hint" id="username-hint">Entre 3 y 50 caracteres: letras, números, punto o guion bajo.</p>
+          </div>
+          <div class="field">
+            <label for="document-number">DNI</label>
+            <input id="document-number" name="dni" type="text" inputmode="numeric" autocomplete="off" maxlength="8" pattern="[0-9]{7,8}" aria-describedby="document-number-hint" required>
+            <p class="field-hint" id="document-number-hint">Ingresá solo números, sin puntos ni espacios.</p>
+          </div>
+          <div class="field">
+            <label for="birth-date">Fecha de nacimiento</label>
+            <input id="birth-date" name="fecha_nacimiento" type="date" autocomplete="bday" required>
+          </div>
+          <div class="field">
+            <label for="register-email">Correo</label>
+            <input id="register-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="register-password">Contraseña</label>
+            <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" aria-describedby="password-hint" required>
+            <p class="field-hint" id="password-hint">Mínimo 8 caracteres, una mayúscula, un número y un símbolo.</p>
+          </div>
+          <p class="form-message" id="register-message" role="alert" aria-live="polite"></p>
+          <button class="button button--primary" id="register-button" type="submit">Siguiente <span aria-hidden="true">→</span></button>
+        </form>
+
+        <a class="back-link" href="prototipo-login.html">← Volver al inicio de sesión</a>
+      </div>
+      <div class="login-card login-card--vehicle" id="vehicle-step" hidden>
+        <div class="login-card__heading">
+          <p class="eyebrow">Área de clientes</p>
+          <h2 id="vehicle-heading" tabindex="-1">Bienvenido de nuevo</h2>
+          <p>Unite a la nueva forma de asegurar tu auto.</p>
+        </div>
+        <form class="login-form vehicle-form" id="vehicle-form">
+          <h3>Carga los datos de tu auto</h3>
+          <div class="field">
+            <label for="vehicle-brand">Marca</label>
+            <input id="vehicle-brand" name="marca" type="text" maxlength="50" required>
+          </div>
+          <div class="field">
+            <label for="vehicle-model">Modelo</label>
+            <input id="vehicle-model" name="modelo" type="text" maxlength="50" required>
+          </div>
+          <div class="field">
+            <label for="vehicle-year">Año</label>
+            <input id="vehicle-year" name="anio" type="text" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" required>
+          </div>
+          <div class="field">
+            <label for="vehicle-plate">Patente</label>
+            <input id="vehicle-plate" name="patente" type="text" maxlength="10" pattern="[A-Za-z0-9]{1,10}" autocapitalize="characters" spellcheck="false" required>
+          </div>
+          <div class="field">
+            <label for="vehicle-chassis">Chasis nro.</label>
+            <input id="vehicle-chassis" name="chasis" type="text" maxlength="50" spellcheck="false" required>
+          </div>
+          <div class="field">
+            <label for="vehicle-engine">Motor nro.</label>
+            <input id="vehicle-engine" name="motor" type="text" maxlength="50" spellcheck="false" required>
+          </div>
+          <p class="form-message" id="vehicle-message" role="alert" aria-live="polite"></p>
+          <div class="vehicle-actions">
+            <button class="button button--primary" id="vehicle-back" type="button"><span aria-hidden="true">←</span> Volver</button>
+            <button class="button button--primary" id="vehicle-continue" type="submit">Continuar <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+      <div class="login-card login-card--vehicle" id="insurance-step" hidden>
+        <div class="login-card__heading">
+          <p class="eyebrow">Área de clientes</p>
+          <h2 id="insurance-heading" tabindex="-1">Datos del seguro</h2>
+          <p>Completá el seguro de tu vehículo.</p>
+        </div>
+        <form class="login-form insurance-form" id="insurance-form">
+          <div class="field">
+            <label for="insurance-company">Aseguradora</label>
+            <input id="insurance-company" name="aseguradora" type="text" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="insurance-policy">Póliza</label>
+            <input id="insurance-policy" name="nro_poliza" type="text" maxlength="50" required>
+          </div>
+          <div class="field">
+            <label for="insurance-coverage">Cobertura</label>
+            <select id="insurance-coverage" name="cobertura" required>
+              <option value="" disabled selected>Seleccioná una cobertura</option>
+              <option value="Terceros Básico">Terceros Básico</option>
+              <option value="Terceros Completo">Terceros Completo</option>
+              <option value="Todo Riesgo con Franquicia">Todo Riesgo con Franquicia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="insurance-start">Vigencia desde</label>
+            <input id="insurance-start" name="vigencia_desde" type="date" required>
+          </div>
+          <div class="field">
+            <label for="insurance-end">Vigencia hasta</label>
+            <input id="insurance-end" name="vigencia_hasta" type="date" required>
+          </div>
+          <p class="form-message" id="insurance-message" role="alert" aria-live="polite"></p>
+          <div class="vehicle-actions">
+            <button class="button button--primary" id="insurance-back" type="button"><span aria-hidden="true">←</span> Volver</button>
+            <button class="button button--primary" id="insurance-create" type="submit">Crear cuenta <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <dialog class="registration-result" id="registration-result" aria-labelledby="registration-result-title" aria-describedby="registration-result-message">
+    <h2 id="registration-result-title"></h2>
+    <p id="registration-result-message"></p>
+    <form method="dialog">
+      <button class="button button--primary" id="registration-result-close" type="submit" autofocus>Aceptar</button>
+    </form>
+  </dialog>
+</body>
+</html>

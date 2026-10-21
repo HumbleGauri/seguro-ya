@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguro Ya — Iniciar sesión</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <script src="prototipo-login.js" defer></script>
+</head>
+<body>
+  <main class="login-page">
+    <section class="brand-panel" aria-label="Presentación de Seguro Ya">
+      <div class="brand-panel__content">
+        <a class="brand" href="#" aria-label="Seguro Ya, inicio">
+          <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="216" height="72">
+        </a>
+
+        <div class="brand-panel__copy">
+          <p class="eyebrow">Tu protección, siempre cerca</p>
+          <h1>Conducí tranquilo.<br><em>Estamos con vos.</em></h1>
+          <p class="brand-panel__description">
+            Gestioná tu póliza, consultá tu cobertura y pedí asistencia cuando la necesites.
+          </p>
+        </div>
+      </div>
+      <span class="brand-panel__shape brand-panel__shape--one" aria-hidden="true"></span>
+      <span class="brand-panel__shape brand-panel__shape--two" aria-hidden="true"></span>
+    </section>
+
+    <section class="form-panel" aria-label="Formulario de inicio de sesión">
+      <div class="login-card">
+        <div class="mobile-brand brand" aria-hidden="true">
+          <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="216" height="72">
+        </div>
+
+        <div class="login-card__heading">
+          <p class="eyebrow">Área de clientes</p>
+          <h2>Bienvenido de nuevo</h2>
+          <p>Ingresá para administrar tu seguro automotor.</p>
+        </div>
+
+        <form class="login-form" id="login-form" novalidate>
+          <div class="field">
+            <label for="nombre-usuario">Nombre de usuario</label>
+            <input id="nombre-usuario" name="nombre_usuario" type="text" placeholder="Ingresá tu nombre de usuario" autocomplete="username" required>
+          </div>
+
+          <div class="field">
+            <div class="field__label-row">
+              <label for="password">Contraseña</label>
+              <a href="recuperar-password.html">¿La olvidaste?</a>
+            </div>
+            <input id="password" name="password" type="password" placeholder="Ingresá tu contraseña" autocomplete="current-password" required>
+          </div>
+
+          <p class="form-message" id="login-message" role="alert" aria-live="polite"></p>
+
+          <button class="button button--primary" id="login-button" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="divider"><span>o</span></div>
+        <p class="signup">¿Todavía no tenés una cuenta? <a href="registro.html">Creala ahora</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

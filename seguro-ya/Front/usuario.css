@@ -1,0 +1,93 @@
+.portal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  padding: 12px clamp(20px, 6vw, 88px);
+  border-bottom: 1px solid #e2e8f0;
+  background: var(--white);
+}
+
+.portal-brand { flex-shrink: 0; width: 180px; }
+.portal-header__account { display: flex; align-items: center; gap: 22px; }
+.account-email { color: var(--muted); font-size: 13px; }
+.logout-button { padding: 9px 0; border: 0; color: var(--navy); background: transparent; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; }
+.logout-button:hover { color: #a16207; }
+.logout-button:focus-visible, .portal-brand:focus-visible, .view-switch__option:focus-visible { outline: 3px solid rgba(245,158,11,.55); outline-offset: 4px; }
+
+.portal-main { width: min(100% - 40px, 1050px); margin: 0 auto; padding: clamp(38px, 7vw, 72px) 0 54px; }
+.account-dashboard { display: grid; gap: 28px; }
+.account-dashboard__heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.account-dashboard__heading .eyebrow { margin: 0 0 9px; }
+.account-dashboard__heading h1 { margin: 0; color: var(--navy); font-size: clamp(30px, 5vw, 44px); line-height: 1.08; letter-spacing: -.05em; }
+
+.view-switch { position: relative; display: grid; width: min(100%, 330px); grid-template-columns: repeat(2, 1fr); padding: 4px; border: 1px solid #dbe4ee; border-radius: 999px; background: #edf2f7; isolation: isolate; }
+.view-switch__slider { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--navy); box-shadow: 0 6px 14px rgba(15,36,62,.2); transition: transform .28s cubic-bezier(.2,.8,.2,1); }
+.view-switch.is-profile .view-switch__slider { transform: translateX(100%); }
+.view-switch__option { position: relative; z-index: 1; min-height: 44px; padding: 8px 18px; border: 0; border-radius: 999px; color: #64748b; background: transparent; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; transition: color .25s ease; }
+.view-switch__option.is-active { color: #fff; }
+
+.account-view { min-height: 420px; }
+.view-status { margin: 0; padding: 32px; border: 1px solid #dbe4ee; border-radius: 20px; color: var(--muted); background: var(--white); text-align: center; }
+.view-status--error { border-color: #fecaca; color: #991b1b; background: #fff7f7; }
+.credential-card, .profile-card { border: 1px solid #dbe4ee; border-radius: 22px; background: var(--white); box-shadow: 0 14px 34px rgba(15,36,62,.07); }
+.credential-card { overflow: hidden; }
+.credential-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: clamp(25px, 5vw, 42px); background: linear-gradient(130deg, #fffaf0, #fff 58%, #f2f6fa); }
+.data-label { margin: 0 0 8px; color: #a16207; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.credential-card h2, .profile-card h2 { margin: 0; color: var(--navy); font-size: clamp(24px, 4vw, 34px); letter-spacing: -.04em; }
+.status-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 5px 11px; border-radius: 999px; color: #166534; background: #dcfce7; font-size: 11px; font-weight: 800; text-transform: capitalize; }
+.status-badge--inactive { color: #991b1b; background: #fee2e2; }
+.data-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid #e8edf2; }
+.data-grid > div { padding: 22px clamp(25px, 5vw, 42px); }
+.data-grid > div + div { border-left: 1px solid #e8edf2; }
+.data-grid dt { margin-bottom: 7px; color: #64748b; font-size: 12px; font-weight: 700; }
+.data-grid dd { margin: 0; overflow-wrap: anywhere; color: var(--navy); font-size: 15px; font-weight: 750; }
+
+.insurance-section { display: grid; gap: 18px; margin-top: 34px; }
+.section-title-row { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.section-title-row .eyebrow { margin: 0 0 7px; }
+.section-title-row h2 { margin: 0; color: var(--navy); font-size: 24px; letter-spacing: -.035em; }
+.insurance-count { color: #64748b; font-size: 12px; font-weight: 700; }
+.insurance-list { display: grid; gap: 14px; }
+.insurance-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto; gap: 22px; padding: 22px 24px; border: 1px solid #dbe4ee; border-radius: 18px; background: var(--white); box-shadow: 0 8px 22px rgba(15,36,62,.045); }
+.insurance-card h3 { margin: 0 0 7px; color: var(--navy); font-size: 17px; }
+.insurance-card p { margin: 0; color: #64748b; font-size: 13px; line-height: 1.55; }
+.insurance-card__vehicle { padding-left: 22px; border-left: 1px solid #e8edf2; }
+.insurance-card__dates { align-self: center; text-align: right; }
+.empty-state { margin: 0; padding: 28px; border: 1px dashed #cbd5e1; border-radius: 18px; color: #64748b; background: #f8fafc; text-align: center; }
+
+.profile-card { overflow: hidden; }
+.profile-card__identity { display: flex; align-items: center; gap: 20px; padding: clamp(25px, 5vw, 42px); background: linear-gradient(130deg, #f2f6fa, #fff 70%); }
+.profile-card__identity > div > p:last-child { margin: 7px 0 0; color: #64748b; font-size: 14px; }
+.profile-avatar { display: grid; width: 70px; height: 70px; flex: 0 0 70px; place-items: center; border-radius: 22px; color: var(--navy); background: #fff1c9; font-size: 22px; font-weight: 850; }
+.data-grid--profile { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.data-grid--profile > div:nth-child(odd) { border-left: 0; }
+.data-grid--profile > div:nth-child(n+3) { border-top: 1px solid #e8edf2; }
+.portal-main > .form-message { margin-top: 20px; }
+.portal-footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px clamp(20px, 6vw, 88px); border-top: 1px solid #e2e8f0; color: #64748b; font-size: 12px; }
+.portal-footer span:first-child { color: var(--navy); font-weight: 750; }
+
+@media (max-width: 700px) {
+  .portal-header { min-height: 68px; padding: 10px 20px; }
+  .portal-brand { width: 150px; }
+  .portal-header__account { gap: 12px; }
+  .account-email { display: none; }
+  .logout-button { font-size: 12px; }
+  .portal-main { width: min(100% - 32px, 520px); padding-top: 34px; }
+  .account-dashboard__heading { align-items: stretch; flex-direction: column; }
+  .view-switch { width: 100%; }
+  .account-view { min-height: 480px; }
+  .credential-card__top { align-items: flex-start; flex-direction: column; }
+  .data-grid, .data-grid--profile { grid-template-columns: 1fr; }
+  .data-grid > div + div, .data-grid--profile > div { border-left: 0; border-top: 1px solid #e8edf2; }
+  .data-grid > div:first-child, .data-grid--profile > div:first-child { border-top: 0; }
+  .insurance-card { grid-template-columns: 1fr; gap: 16px; }
+  .insurance-card__vehicle { padding: 16px 0 0; border-top: 1px solid #e8edf2; border-left: 0; }
+  .insurance-card__dates { text-align: left; }
+  .profile-card__identity { align-items: flex-start; }
+  .portal-footer { padding: 19px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

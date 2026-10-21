@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Seguro Ya — Administración</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="usuario.css?v=20261009-logo2">
+  <link rel="stylesheet" href="admin.css?v=20261011-admin2">
+  <script src="panel-sesion.js" defer></script>
+</head>
+<body data-profile="admin">
+  <header class="portal-header">
+    <a class="brand portal-brand" href="admin.html" aria-label="Seguro Ya, inicio de administración">
+      <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="180" height="60">
+    </a>
+    <div class="portal-header__account">
+      <span class="account-email" id="user-email"></span>
+      <button class="logout-button" id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">Área de administración</p>
+      <h1 id="welcome-title">Panel administrador</h1>
+      <p>¿Qué necesitás consultar hoy?</p>
+    </section>
+
+    <section class="portal-section" aria-labelledby="admin-options-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Tu espacio</p>
+          <h2 id="admin-options-title">Consultas administrativas</h2>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <a class="service-card service-card--featured" href="admin-accesos.html">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="9" y="7" width="30" height="34" rx="4"/><path d="M16 17h16M16 24h16M16 31h10"/></svg>
+          </span>
+          <span class="service-card__content">
+            <span class="service-card__title">Registro de accesos</span>
+            <span class="service-card__description">Consultá los intentos de ingreso registrados en la plataforma.</span>
+          </span>
+        </a>
+
+        <a class="service-card" href="admin-usuarios.html">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="11"/><path d="m29 29 10 10M17 20h8M21 16v8"/></svg>
+          </span>
+          <span class="service-card__content">
+            <span class="service-card__title">Buscar usuario</span>
+            <span class="service-card__description">Encontrá cuentas por correo electrónico.</span>
+          </span>
+        </a>
+        <a class="service-card" href="admin-recuperos.html">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="7" y="11" width="34" height="26" rx="4"/><path d="m8 13 16 13 16-13"/></svg>
+          </span>
+          <span class="service-card__content">
+            <span class="service-card__title">Solicitudes de recupero</span>
+            <span class="service-card__description">Consultá los tokens, vencimientos y estados de las solicitudes.</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <p class="form-message" id="session-message" role="alert" aria-live="polite"></p>
+
+  </main>
+
+  <footer class="portal-footer">
+    <span>Seguro Ya</span>
+    <span>Área de administración</span>
+  </footer>
+</body>
+</html>

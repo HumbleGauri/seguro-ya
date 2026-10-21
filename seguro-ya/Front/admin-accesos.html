@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Seguro Ya — Registro de accesos</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="usuario.css?v=20261009-logo2">
+  <link rel="stylesheet" href="admin.css?v=20261011-admin2">
+  <script src="panel-sesion.js" defer></script>
+  <script src="admin-panel.js?v=20261011-admin2" defer></script>
+</head>
+<body data-profile="admin">
+  <header class="portal-header">
+    <a class="brand portal-brand" href="admin.html" aria-label="Seguro Ya, inicio de administración">
+      <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="180" height="60">
+    </a>
+    <div class="portal-header__account">
+      <span class="account-email" id="user-email"></span>
+      <button class="logout-button" id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+  <main class="portal-main">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">Área de administración</p>
+      <h1 id="welcome-title">Registro de accesos</h1>
+      <p>Consultá los intentos de ingreso registrados en la plataforma.</p>
+      <a class="back-link" href="admin.html">← Volver al panel administrador</a>
+    </section>
+    <p class="form-message" id="session-message" role="alert" aria-live="polite"></p>
+    <section class="admin-panel" id="registro-accesos" aria-labelledby="access-log-title">
+      <div class="admin-panel__heading">
+        <div>
+          <p class="eyebrow">Auditoría</p>
+          <h2 id="access-log-title">Accesos registrados</h2>
+          <p>Intentos de ingreso, del más reciente al más antiguo.</p>
+        </div>
+        <button class="admin-button admin-button--secondary" id="refresh-access-log" type="button">Actualizar</button>
+      </div>
+      <p class="admin-status" id="access-log-status" role="status" aria-live="polite">Cargando registros…</p>
+      <div class="admin-table-wrap" id="access-log-results" tabindex="0" aria-label="Registro de accesos; desplazá la tabla horizontalmente para ver todas las columnas" hidden>
+        <table class="admin-table">
+          <thead><tr><th scope="col">Fecha y hora</th><th scope="col">Correo</th><th scope="col">Resultado</th><th scope="col">IP</th></tr></thead>
+          <tbody id="access-log-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="portal-footer"><span>Seguro Ya</span><span>Área de administración</span></footer>
+</body>
+</html>

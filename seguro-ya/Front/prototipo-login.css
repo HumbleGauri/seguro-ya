@@ -1,0 +1,87 @@
+:root {
+  --navy: #0f243e;
+  --canvas: #f8fafc;
+  --text: #1e293b;
+  --muted: #475569;
+  --border: #94a3b8;
+  --amber: #f59e0b;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; color: var(--text); background: var(--canvas); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: inherit; }
+
+/* Mobile first: frame pensado para 390 x 844 px. */
+.login-page { min-height: 100vh; }
+.brand-panel { display: none; }
+.form-panel { display: grid; min-height: 100vh; padding: 28px 20px 24px; place-items: start center; }
+.login-card { width: min(100%, 390px); padding: 0 4px; }
+.brand { display: inline-flex; align-items: center; width: 216px; max-width: 100%; text-decoration: none; }
+.brand__logo { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 3 / 1; object-fit: contain; }
+.mobile-brand { display: inline-flex; margin: 0 0 62px; }
+.eyebrow { margin: 0 0 13px; color: var(--amber); font-size: 11px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+.login-card__heading { margin-bottom: 31px; }
+.login-card h2 { margin: 0 0 9px; color: var(--navy); font-size: 31px; line-height: 1.1; letter-spacing: -.05em; }
+.login-card__heading > p:last-child { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.login-form { display: grid; gap: 20px; }
+.field { display: grid; gap: 8px; }
+.field__label-row { display: flex; justify-content: space-between; gap: 14px; }
+label { color: var(--text); font-size: 13px; font-weight: 700; }
+.field a, .signup a, .help a { color: var(--navy); font-weight: 750; text-decoration: none; }
+.field__label-row a { color: var(--muted); font-size: 12px; font-weight: 600; }
+input[type="email"], input[type="password"], input[type="text"], input[type="date"] { width: 100%; height: 52px; padding: 0 16px; border: 1px solid var(--border); border-radius: 10px; outline: none; color: var(--text); background: var(--white); font: inherit; font-size: 14px; transition: border-color .2s, box-shadow .2s; }
+input::placeholder { color: #64748b; }
+input:focus { border-color: var(--navy); box-shadow: 0 0 0 4px rgba(15,36,62,.12); }
+.checkbox-row { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; font-weight: 500; cursor: pointer; }
+.checkbox-row input { position: absolute; opacity: 0; }
+.checkbox-row__box { width: 17px; height: 17px; border: 1px solid var(--border); border-radius: 5px; background: var(--white); }
+.checkbox-row input:checked + .checkbox-row__box { border-color: var(--navy); background: var(--navy); box-shadow: inset 0 0 0 4px var(--white); }
+.button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 54px; border: 0; border-radius: 10px; font: inherit; font-size: 15px; font-weight: 750; cursor: pointer; }
+.button--primary { color: var(--navy); background: var(--amber); box-shadow: 0 8px 16px rgba(245,158,11,.2); }
+.button--primary span { font-size: 22px; line-height: 0; }
+.button:disabled { cursor: wait; opacity: .7; }
+.form-message { min-height: 20px; margin: -4px 0 0; color: #b91c1c; font-size: 13px; line-height: 1.45; }
+.form-message:empty { display: none; }
+.form-message--success { color: #166534; }
+.field-hint { margin: 0; color: #64748b; font-size: 12px; line-height: 1.5; }
+[hidden] { display: none !important; }
+.divider { display: flex; align-items: center; gap: 15px; margin: 29px 0 21px; color: #64748b; font-size: 12px; }
+.divider::before, .divider::after { flex: 1; height: 1px; content: ""; background: #dbe2ea; }
+.signup, .help { text-align: center; font-size: 13px; }
+.signup { margin: 0 0 44px; color: var(--muted); }
+.help { margin: 0; color: #64748b; font-size: 12px; }
+.help a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.back-link { display: inline-block; margin-top: 24px; color: var(--muted); font-size: 13px; font-weight: 700; text-decoration: none; }
+.prototype-note { margin: 20px 0 0; color: #64748b; font-size: 12px; line-height: 1.5; text-align: center; }
+.access-page { display: grid; min-height: 100vh; padding: 24px; place-items: center; background: var(--canvas); }
+.access-card { width: min(100%, 560px); padding: 36px; border: 1px solid #dbe2ea; border-radius: 18px; background: var(--white); box-shadow: 0 20px 50px rgba(15,36,62,.1); text-align: center; }
+.access-card h1 { margin: 0 0 14px; color: var(--navy); font-size: clamp(28px, 5vw, 42px); line-height: 1.1; }
+.access-card p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
+.access-card .form-message { margin-top: 16px; }
+.login-card--form { padding-bottom: 40px; }
+
+/* Adaptación de escritorio para revisar más adelante. */
+@media (min-width: 900px) {
+  .login-page { display: grid; grid-template-columns: minmax(420px, 43%) 1fr; }
+  .brand-panel { position: relative; display: flex; min-height: 700px; overflow: hidden; color: var(--white); background: var(--navy); }
+  .brand-panel::after { position: absolute; inset: 0; content: ""; pointer-events: none; background: linear-gradient(145deg, rgba(255,255,255,.05), transparent 46%); }
+  .brand-panel__content { position: relative; z-index: 1; display: flex; flex: 1; flex-direction: column; width: min(100%, 560px); padding: clamp(36px, 7vw, 88px) clamp(30px, 7vw, 92px); }
+  .brand-panel__copy { margin: auto 0; max-width: 410px; }
+  .brand-panel .brand { flex-shrink: 0; width: 236px; padding: 4px 10px; border-radius: 10px; background: var(--white); }
+  h1 { margin: 0 0 24px; font-size: clamp(40px, 4vw, 62px); line-height: 1.03; letter-spacing: -.06em; }
+  h1 em { color: #fbbf24; font-style: normal; }
+  .brand-panel__description { max-width: 350px; color: #d9e2ee; font-size: 16px; line-height: 1.65; }
+  .assurance-card { display: flex; align-items: center; gap: 12px; width: max-content; padding: 13px 17px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; background: rgba(255,255,255,.08); font-size: 12px; }
+  .assurance-card__icon { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; color: var(--navy); background: var(--amber); font-weight: 900; }
+  .assurance-card strong, .assurance-card span { display: block; }
+  .assurance-card strong { margin-bottom: 3px; font-size: 13px; }
+  .assurance-card div span { color: #b6c5d6; }
+  .brand-panel__shape { position: absolute; z-index: 0; border: 1px solid rgba(255,255,255,.08); border-radius: 50%; }
+  .brand-panel__shape--one { right: -230px; bottom: -230px; width: 530px; height: 530px; }
+  .brand-panel__shape--two { right: -100px; bottom: -100px; width: 275px; height: 275px; border-color: rgba(245,158,11,.25); }
+  .form-panel { display: grid; min-height: 100vh; padding: 48px; place-items: center; }
+  .login-card { width: min(100%, 440px); padding: 0; }
+  .login-card--form { width: min(100%, 520px); }
+  .mobile-brand { display: none; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Seguro Ya — Mi cuenta</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="usuario.css?v=20261009-logo2">
+  <link rel="stylesheet" href="credencial-virtual/credencial.css">
+  <script src="panel-sesion.js" defer></script>
+  <script src="credencial-virtual/credencial.js" defer></script>
+  <script src="usuario.js" defer></script>
+</head>
+<body data-profile="usuario">
+  <header class="portal-header">
+    <a class="brand portal-brand" href="usuario.html" aria-label="Seguro Ya, inicio">
+      <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="180" height="60">
+    </a>
+    <div class="portal-header__account">
+      <span class="account-email" id="user-email"></span>
+      <button class="logout-button" id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <section class="account-dashboard" aria-labelledby="account-title">
+      <div class="account-dashboard__heading">
+        <div>
+          <p class="eyebrow">Área de clientes</p>
+          <h1 id="account-title">Tu información</h1>
+        </div>
+
+        <div class="view-switch" data-view-switch role="tablist" aria-label="Información de la cuenta">
+          <span class="view-switch__slider" aria-hidden="true"></span>
+          <button class="view-switch__option is-active" id="credential-tab" type="button" role="tab" aria-selected="true" aria-controls="credential-view" data-view-target="credential">
+            Mi credencial
+          </button>
+          <button class="view-switch__option" id="profile-tab" type="button" role="tab" aria-selected="false" aria-controls="profile-view" data-view-target="profile" tabindex="-1">
+            Mis datos
+          </button>
+        </div>
+      </div>
+
+      <section class="account-view" id="credential-view" role="tabpanel" aria-labelledby="credential-tab" data-account-view="credential">
+        <p class="view-status" id="credential-status" role="status">Cargando tu credencial…</p>
+        <div id="credential-content" hidden>
+<div id="mi-credencial" class="cv-widget" data-theme="light">
+
+  <div class="cv-component" data-cara="frente">
+    <div class="cv-preview-heading">
+      <h2>Tu credencial</h2>
+    </div>
+    <div class="cv-stage">
+      <div class="cv-card">
+        <article class="cv-face cv-front" aria-label="Frente de la credencial">
+          <header class="cv-card-header">
+            <div class="cv-brand">
+              <span class="cv-brand-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="5" rx="2" /><line x1="2" x2="22" y1="10" y2="10" /></svg></span>
+              <div><div class="cv-brand-title">Credencial virtual</div><div class="cv-brand-subtitle">Datos personales y automóvil</div></div>
+            </div>
+            <span class="cv-side-tag">Frente</span>
+          </header>
+          <div class="cv-body">
+            <section class="cv-section" aria-label="Datos personales">
+              <h3 class="cv-section-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg>Datos personales</h3>
+              <dl class="cv-fields">
+                <div class="cv-field cv-full"><dt>Nombres y Apellidos</dt><dd class="cv-person-name" data-field="datosPersonales.nombresYApellidos">Sin información</dd></div>
+                <div class="cv-field"><dt>Fecha nac.</dt><dd class="cv-number" data-field="datosPersonales.fechaNacimiento" data-format="date">Sin información</dd></div>
+              </dl>
+            </section>
+            <section class="cv-section" aria-label="Automovil">
+              <h3 class="cv-section-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" /><path d="M7 14h.01" /><path d="M17 14h.01" /><rect width="18" height="8" x="3" y="10" rx="2" /><path d="M5 18v2" /><path d="M19 18v2" /></svg>Automovil</h3>
+              <dl class="cv-fields cv-fields-auto">
+                <div class="cv-field"><dt>Marca</dt><dd data-field="automovil.marca">Sin información</dd></div>
+                <div class="cv-field"><dt>Modelo</dt><dd data-field="automovil.modelo">Sin información</dd></div>
+                <div class="cv-field"><dt>Año</dt><dd class="cv-number" data-field="automovil.anio">Sin información</dd></div>
+              </dl>
+              <dl class="cv-plate"><dt>Patente</dt><dd data-field="automovil.patente">Sin información</dd></dl>
+            </section>
+          </div>
+        </article>
+
+        <article class="cv-face cv-back" aria-label="Reverso de la credencial" aria-hidden="true" inert>
+          <header class="cv-card-header">
+            <div class="cv-brand">
+              <span class="cv-brand-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="5" rx="2" /><line x1="2" x2="22" y1="10" y2="10" /></svg></span>
+              <div><div class="cv-brand-title">Credencial virtual</div><div class="cv-brand-subtitle">Seguro e identificación del automóvil</div></div>
+            </div>
+            <span class="cv-side-tag">Reverso</span>
+          </header>
+          <div class="cv-body">
+            <section class="cv-section" aria-label="Seguro">
+              <h3 class="cv-section-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg>Seguro</h3>
+              <dl class="cv-fields cv-fields-insurance">
+                <div class="cv-field"><dt>Aseguradora</dt><dd data-field="seguro.aseguradora">Sin información</dd></div>
+                <div class="cv-field"><dt>Seguro</dt><dd data-field="seguro.seguro">Sin información</dd></div>
+                <div class="cv-field cv-full"><dt>Poliza nro.</dt><dd class="cv-number" data-field="seguro.polizaNumero">Sin información</dd></div>
+              </dl>
+              <dl class="cv-fields" style="margin-top:17px">
+                <div class="cv-field"><dt>Vigencia desde</dt><dd class="cv-number" data-field="seguro.vigenciaDesde" data-format="date">Sin información</dd></div>
+                <div class="cv-field"><dt>Vigencia hasta</dt><dd class="cv-number" data-field="seguro.vigenciaHasta" data-format="date">Sin información</dd></div>
+              </dl>
+            </section>
+            <section class="cv-section" aria-label="Automovil">
+              <h3 class="cv-section-title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" /><path d="M7 14h.01" /><path d="M17 14h.01" /><rect width="18" height="8" x="3" y="10" rx="2" /><path d="M5 18v2" /><path d="M19 18v2" /></svg>Automovil</h3>
+              <dl class="cv-fields cv-fields-technical">
+                <div class="cv-field"><dt>Motor nro.</dt><dd class="cv-number" data-field="automovil.motorNumero">Sin información</dd></div>
+                <div class="cv-field"><dt>Chasis nro.</dt><dd class="cv-number" data-field="automovil.chasisNumero">Sin información</dd></div>
+              </dl>
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cv-controls">
+      <button class="cv-flip" type="button" aria-label="Ver reverso de la credencial">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2" /><path d="m15.194 13.707 3.814 1.86-1.86 3.814" /><path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4" /></svg><span class="cv-button-text">Ver reverso</span>
+      </button>
+    </div>
+    <div class="cv-announcement" role="status" aria-live="polite" aria-atomic="true">Frente de la credencial visible.</div>
+  </div>
+</div>
+
+        </div>
+      </section>
+
+      <section class="account-view" id="profile-view" role="tabpanel" aria-labelledby="profile-tab" data-account-view="profile" hidden>
+        <p class="view-status" id="profile-status" role="status">Cargando tus datos…</p>
+        <div class="profile-card" id="profile-content" hidden>
+          <div class="profile-card__identity">
+            <span class="profile-avatar" id="profile-initials" aria-hidden="true"></span>
+            <div>
+              <p class="data-label">Titular de la cuenta</p>
+              <h2 id="profile-full-name">—</h2>
+              <p id="profile-username"></p>
+            </div>
+          </div>
+          <dl class="data-grid data-grid--profile">
+            <div><dt>Correo electrónico</dt><dd id="profile-email">—</dd></div>
+            <div><dt>Fecha de nacimiento</dt><dd id="profile-birth-date">—</dd></div>
+            <div><dt>Fecha de registro</dt><dd id="profile-created-at">—</dd></div>
+            <div><dt>Estado de la cuenta</dt><dd><span class="status-badge" id="profile-state"></span></dd></div>
+          </dl>
+        </div>
+      </section>
+    </section>
+
+    <p class="form-message" id="session-message" role="alert" aria-live="polite"></p>
+  </main>
+
+  <footer class="portal-footer">
+    <span>Seguro Ya</span>
+    <span>Tu espacio, más simple.</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Seguro Ya — Solicitudes de recupero</title>
+  <link rel="stylesheet" href="prototipo-login.css?v=20261009-logo2">
+  <link rel="stylesheet" href="usuario.css?v=20261009-logo2">
+  <link rel="stylesheet" href="admin.css?v=20261011-token2">
+  <script src="panel-sesion.js" defer></script>
+  <script src="admin-recuperos.js?v=20261011-token2" defer></script>
+</head>
+<body data-profile="admin">
+  <header class="portal-header">
+    <a class="brand portal-brand" href="admin.html" aria-label="Seguro Ya, inicio de administración">
+      <img class="brand__logo" src="../Imagenes/Logo.png" alt="Seguro Ya" width="180" height="60">
+    </a>
+    <div class="portal-header__account">
+      <span class="account-email" id="user-email"></span>
+      <button class="logout-button" id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+  <main class="portal-main">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">Área de administración</p>
+      <h1 id="welcome-title">Solicitudes de recupero</h1>
+      <p>Consultá las solicitudes de recuperación de cada cuenta.</p>
+      <a class="back-link" href="admin.html">← Volver al panel administrador</a>
+    </section>
+    <p class="form-message" id="session-message" role="alert" aria-live="polite"></p>
+    <section class="admin-panel" aria-labelledby="recovery-list-title">
+      <div class="admin-panel__heading">
+        <div>
+          <p class="eyebrow">Recuperación de acceso</p>
+          <h2 id="recovery-list-title">Solicitudes registradas</h2>
+          <p>Del registro más reciente al más antiguo.</p>
+        </div>
+        <button class="admin-button admin-button--secondary" id="refresh-recovery-requests" type="button">Actualizar</button>
+      </div>
+      <p class="admin-status" id="recovery-requests-status" role="status" aria-live="polite">Cargando solicitudes…</p>
+      <div class="admin-table-wrap" id="recovery-requests-results" tabindex="0" aria-label="Solicitudes de recupero; desplazá la tabla horizontalmente para ver todas las columnas" hidden>
+        <table class="admin-table admin-table--recovery">
+          <thead><tr><th scope="col">Usuario</th><th scope="col">Correo</th><th scope="col">Token</th><th scope="col">Vencimiento</th><th scope="col">Estado</th></tr></thead>
+          <tbody id="recovery-requests-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="portal-footer"><span>Seguro Ya</span><span>Área de administración</span></footer>
+</body>
+</html>

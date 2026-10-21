@@ -1,0 +1,36 @@
+.login-card--vehicle {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 52px);
+}
+
+.login-card--vehicle .login-card__heading { margin-bottom: 32px; }
+.login-card--vehicle h2 { font-size: 28px; font-weight: 500; letter-spacing: -.035em; }
+.login-card--vehicle .eyebrow { margin-bottom: 10px; }
+.login-card--vehicle .login-card__heading > p:last-child { font-size: 13px; }
+.vehicle-form { flex: 1; gap: 16px; align-content: start; grid-template-rows: auto repeat(6, auto) auto 1fr; }
+.vehicle-form h3 { margin: 0 0 8px; color: var(--muted); text-align: center; font-size: 14px; }
+.vehicle-form .field { gap: 6px; }
+.vehicle-form label { font-size: 12px; font-weight: 500; }
+.vehicle-form input { height: 44px; border-radius: 8px; }
+#vehicle-plate { text-transform: uppercase; }
+.vehicle-actions { display: flex; justify-content: space-between; gap: 24px; align-self: end; padding-top: 44px; }
+.vehicle-actions .button { width: 42%; min-width: 120px; height: 52px; font-size: 14px; font-weight: 500; box-shadow: none; }
+.vehicle-actions .button span { font-size: 18px; }
+.insurance-form { flex: 1; gap: 20px; align-content: start; grid-template-rows: repeat(5, auto) auto 1fr; }
+.insurance-form .vehicle-actions .button { width: auto; flex: 1; }
+.insurance-form select { width: 100%; min-width: 0; height: 52px; padding: 0 12px; border: 1px solid var(--border); border-radius: 10px; color: var(--text); background: var(--white); font: inherit; font-size: 14px; transition: border-color .2s, box-shadow .2s; }
+.insurance-form select:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 4px rgba(15,36,62,.12); }
+.insurance-form select:required:invalid { color: #64748b; }
+.insurance-form select option { color: var(--text); }
+
+.registration-result { width: min(440px, calc(100% - 40px)); max-height: calc(100svh - 40px); padding: 28px; border: 1px solid #dbe2ea; border-radius: 18px; color: var(--text); background: var(--white); box-shadow: 0 20px 60px rgba(15,36,62,.2); }
+.registration-result::backdrop { background: rgba(15,36,62,.55); }
+.registration-result h2 { margin: 0 0 12px; color: #b91c1c; font-size: 24px; line-height: 1.2; }
+.registration-result--success h2 { color: #166534; }
+.registration-result p { margin: 0 0 24px; color: var(--muted); font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+.registration-result .button { font-size: 14px; }
+
+@media (min-width: 900px) {
+  .login-card--vehicle { width: min(100%, 440px); min-height: 720px; }
+}
